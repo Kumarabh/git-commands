@@ -25,12 +25,12 @@ $ git show b7cac31a7680874f79177fa021f8246d9b6093fb
 
 #### BRING COMMITED CHANGES TO STAGING AREA + DELETES STAGING AREA + WORKING DIRECTORY - Undo the last commit and remove all changes in working directory - 
 
-$ git reset --hard <Commit ID> 
-$ git reset --hard HEAD^1 
-$ git reset --hard HEAD^ 
+$: git reset --hard Commit ID
+$: git reset --hard HEAD^1 
+$: git reset --hard HEAD^ 
 
 
 
 #### BRING THE COMMITED CHANGES TO STAGING AREA - KEEP STAGING AREA + WORKING DIRECTORY - Undo the last commit and bring the commited changes in to staged and leave working directory changes as it is - 
-$ git reset --soft <Commit ID> 
-$ git reset --soft HEAD^1
+$: git reset --soft Commit ID
+$: git reset --soft HEAD^1
