@@ -23,8 +23,13 @@ $ git log -1
 #### Show changes of last commit
 $ git show b7cac31a7680874f79177fa021f8246d9b6093fb
 
-#### Undo the last commit and remove all changes in working directory
-$ git reset --hard HEAD^1
+#### BRING COMMITED CHANGES TO STAGING AREA + DELETES STAGING AREA + WORKING DIRECTORY - Undo the last commit and remove all changes in working directory - 
 
-#### Undo the last commit and bring the commited changes in to staged and leave working directory changes as it is
+$ git reset --hard <Commit ID>
+$ git reset --hard HEAD^1 OR
+$ git reset --hard HEAD^ OR
+
+
+
+#### BRING THE COMMITED CHANGES TO STAGING AREA - KEEP STAGING AREA + WORKING DIRECTORY - Undo the last commit and bring the commited changes in to staged and leave working directory changes as it is - 
 $ git reset --soft HEAD^1
