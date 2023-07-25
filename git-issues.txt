@@ -1,0 +1,77 @@
+------------------------------------logs/ commit diff
+# Show diff of a file w.r.t stage
+git diff file2.txt
+
+# Log last 5 commits
+git log -n 5
+
+# Log last commit
+git log -1
+
+# Show changes of last commit 
+git show b7cac31a7680874f79177fa021f8246d9b6093fb
+
+# Undo the last commit and remove all changes in working directory
+git reset --hard HEAD^1
+
+
+# Undo the last commit and bring the commited changes in to staged and leave working directory
+  changes as it is
+git reset --soft HEAD^1
+
+
+ng generate module feature-ui --route feature-ui --module app.module
+
+---------------Create branch from another branch and push
+# Create/ Checkout to source branch
+$ git checkout source_branch
+
+# Create new branch from source branch
+$ git checkout -b new_branch source_branch
+
+# Push the new_branch to remote
+$ git push origin new_branch
+
+-----------------------------------------------------------------
+
+#1: When you create a repo first and there is file already in repo, clone, add your commit in local and try to push or pull.
+>git pull origin master 
+fatal: refusing to merge unrelated histories 
+solution: git pull origin master --allow-unrelated-histories
+
+-----------------------------------------------------------------------------
+#2: If you deleted .ssh files (id_rsa, id_rsa.pub, known_hosts)
+
+# OPEN GIT BASH (other wise you will face ERROR:- Saving key "~/.ssh/abhishek" failed: No such file or directory)
+
+# Generate new key ( inside .ssh folder with fileName slb)
+key_type: ed
+$ ssh-keygen -t ed25519 -b 4096 -C "abhishek.km2010@gmail.com" -f ~/.ssh/kumarabh2010
+
+key_type: rsa
+ssh-keygen -t rsa  -C "abhishek.km2010@gmail.com" -f ~/.ssh/kumarabh2010
+
+# Go to Github.com  and add your public key (slb.pub) to GitHub account SSH Keys (any name will work)
+
+// You see in .ssh folder, you don't have known_hosts, means you don't have ssh-agent. Create ssh-agent and add this ssh-key to the agent.
+
+# Create an ssh-agent by generating agent id
+$ eval "$(ssh-agent -s)"
+
+# Add ssh-key to ssh-agent( which is known_hosts file)
+$ ssh-add ~/.ssh/kumarabh2010
+
+> Go to github.com and delete old SSH Keys and register this new ssh key to SSH Keys.
+> Now you should be able to clone the repositories with ssh protocol
+
+-----------------------ADD YOUR FOLDER IDENTITY TO GIT BY 2 COMMANDS ONLY-----------
+ERROR:- 
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/current_key_name
+
